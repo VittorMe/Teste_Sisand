@@ -19,3 +19,10 @@ Antes de começar, verifique se você tem as seguintes ferramentas instaladas:
    git clone <URL do repositório>
 2. **Configurar a string de conexão:**
     Certifique-se de que a string de conexão do banco de dados no arquivo appsettings.json  está configurada corretamente para apontar para sua instância do SQL Server.
+3. **Executar as migrations para criar o banco de dados:**
+   O banco de dados será criado utilizando migrations do Entity Framework. Para gerar e aplicar as migrations, execute os seguintes comandos no terminal:
+```bash
+    dotnet ef migrations add InitialCreate
+
+```bash
+   dotnet ef database update
