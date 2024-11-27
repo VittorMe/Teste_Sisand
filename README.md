@@ -21,8 +21,11 @@ Antes de começar, verifique se você tem as seguintes ferramentas instaladas:
     Certifique-se de que a string de conexão do banco de dados no arquivo appsettings.json  está configurada corretamente para apontar para sua instância do SQL Server.
 3. **Executar as migrations para criar o banco de dados:**
    O banco de dados será criado utilizando migrations do Entity Framework. Para gerar e aplicar as migrations, execute os seguintes comandos no terminal:
-```bash
-    dotnet ef migrations add InitialCreate
-
-```bash
-   dotnet ef database update
+   ```bash
+      dotnet ef migrations add InitialCreate
+      dotnet ef database update
+4. **Instalar as dependências do Angular:**
+  Antes de rodar o projeto Angular, você precisa instalar todas as dependências do projeto listadas no arquivo package.json.
+   ```bash
+   npm install
+5.**Iniciar o servidor Angular**
