@@ -56,14 +56,19 @@ export class RegistrationComponent implements OnInit {
 
 
       
-      this.authService.register(this.form.value.userName,this.form.value.nome,this.form.value.sobrenome,this.form.value.email,this.form.value.password).subscribe(
+      this.authService.register(
+        this.form.value.userName,
+        this.form.value.nome,
+        this.form.value.sobrenome,
+        this.form.value.email,
+        this.form.value.password).subscribe(
         (reponse : Usuario)=>{
           this.toastr.success('Usuaario salvo com Sucesso!', 'Sucesso');
         },
         (error: any) => {
           console.error(error);
           this.spinner.hide();
-          this.toastr.error('Error ao salvar evento', 'Erro');
+          this.toastr.error('Error ao salvar Usuario', 'Erro');
         },
         () => this.spinner.hide()
       ).add(() => { this.spinner.hide() });
