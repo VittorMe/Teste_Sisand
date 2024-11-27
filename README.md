@@ -30,8 +30,10 @@ Antes de começar, verifique se você tem as seguintes ferramentas instaladas:
    npm install
 5. **Iniciar o servidor Angular**
    O comando npm start é usado para rodar o projeto Angular em um servidor de desenvolvimento. O projeto ficará disponível no navegador em http://localhost:4200, onde você poderá acessar a interface do usuário
+   ```bash
+      npm start
 
-```bash
-   git clone <URL do repositório>
-   
+6. **Conclusão**
+   Agora você tem o banco de dados configurado e o projeto Angular e o .NET rodando no seu ambiente local.
+   Caso encontre algum problema durante a configuração ou execução, verifique os logs de erro ou consulte a documentação adicional para solucionar problemas comuns.
 
