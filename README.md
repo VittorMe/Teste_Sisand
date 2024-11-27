@@ -1,4 +1,4 @@
-# Projeto de Exemplo
+# Cadastro de usuários Sisand 
 
 Este é um projeto full-stack que utiliza o **SQL Server** como banco de dados e um **front-end em Angular**. O banco de dados é criado utilizando **migrations** no Entity Framework. Abaixo estão os passos para configurar e rodar o projeto corretamente.
 
