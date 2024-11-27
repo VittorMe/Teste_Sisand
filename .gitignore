@@ -1,0 +1,59 @@
+# .NET / C# / ASP.NET
+## Windows
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]ev/
+[Dd]ebug-x86/
+[Dd]ebug-x64/
+[Dd]ebug-netcore/
+[Dd]ebug-windows/
+[Dd]ebug-windows-x64/
+[Dd]ebug-windows-x86/
+[Dd]ebug-windows-arm/
+bin/
+obj/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# VS
+.vs/
+.vscode/
+.idea/
+.vscode/*
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.dbmdl
+.vspscc
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# ASP.NET
+# User-specific files (on Windows)
+appsettings.Development.json
+appsettings.Production.json
+
+# Entity Framework
+# Auto-generated files from Entity Framework migrations
+Migrations/
+
+# Angular
+# Node.js and Angular specific
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+tmp/
+build/
+
+# System files
+.DS_Store
+Thumbs.db

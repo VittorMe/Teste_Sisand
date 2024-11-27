@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sisand.Api", "Sisand.Api.csproj", "{6C6A0DD6-8003-4046-85B9-1A6B5869796A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sisand.Persistence", "..\Sisand.Persistence\Sisand.Persistence.csproj", "{3F776993-7496-4F50-9D57-8CBD84745217}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C6A0DD6-8003-4046-85B9-1A6B5869796A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C6A0DD6-8003-4046-85B9-1A6B5869796A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C6A0DD6-8003-4046-85B9-1A6B5869796A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C6A0DD6-8003-4046-85B9-1A6B5869796A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F776993-7496-4F50-9D57-8CBD84745217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F776993-7496-4F50-9D57-8CBD84745217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F776993-7496-4F50-9D57-8CBD84745217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F776993-7496-4F50-9D57-8CBD84745217}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FD800A0-64C3-4EEC-8A38-68AC47A1A72D}
+	EndGlobalSection
+EndGlobal
