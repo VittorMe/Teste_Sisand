@@ -55,7 +55,7 @@ export class UserDetalheComponent implements OnInit {
   }
   public carregarEvento(): void {
     this.usuarioId = this.activatedRouter.snapshot.paramMap.get('id');
-    if(this.usuarioId != null || this.usuarioId!= ''){
+    if (this.usuarioId != null && this.usuarioId !== ''){
       this.spinner.show();
       this.estadoSalvar = 'put';
       this.userService.getUsuarioById(this.usuarioId).subscribe(
