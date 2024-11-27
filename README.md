@@ -28,7 +28,7 @@ Antes de começar, verifique se você tem as seguintes ferramentas instaladas:
   Antes de rodar o projeto Angular, você precisa instalar todas as dependências do projeto listadas no arquivo package.json.
    ```bash
    npm install
-5.**Iniciar o servidor Angular**
+5. **Iniciar o servidor Angular**
    O comando npm start é usado para rodar o projeto Angular em um servidor de desenvolvimento. O projeto ficará disponível no navegador em http://localhost:4200, onde você poderá acessar a interface do usuário
 
 ```bash
