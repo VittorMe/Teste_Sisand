@@ -14,36 +14,35 @@ export class UserService {
   ) { }
 
   public getUsuarios(): Observable<Usuario[]> {
-    // Agora o token é recuperado dos cookies
     const token = this.authService.getToken();
 
     if (!token) {
       throw new Error('Usuário não autenticado');
     }
 
-    // Define o header de autorização com o token recuperado
+   
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}` // Define o header de autorização
+      'Authorization': `Bearer ${token}` 
     });
 
-    // Faz a requisição GET passando o cabeçalho com o token
+    
     return this.http.get<Usuario[]>(this.apiUrl, { headers });
   }
   
   public getUsuarioById(id: string): Observable<Usuario> {
-    // Agora o token é recuperado dos cookies
+   
     const token = this.authService.getToken();
 
     if (!token) {
       throw new Error('Usuário não autenticado');
     }
 
-    // Define o header de autorização com o token recuperado
+    
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}` // Define o header de autorização
+      'Authorization': `Bearer ${token}` 
     });
 
-    // Faz a requisição GET passando o cabeçalho com o token
+    
     return this.http.get<Usuario>(`${this.apiUrl}/${id}`, { headers });
   }
 

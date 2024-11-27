@@ -23,7 +23,7 @@ export class NavComponent implements OnInit {
 
 
   logout(): void {
-    this.authService.logout(); // Chame o método de logout no seu serviço de autenticação
-    this.router.navigate(['/login']); // Redireciona para a página de login
+    this.authService.logout(); 
+    this.router.navigate(['/login']); 
   }
 }

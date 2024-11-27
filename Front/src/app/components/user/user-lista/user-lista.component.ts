@@ -32,7 +32,7 @@ export class UserListaComponent implements OnInit {
   }
 
   public filtrarEventos(filtrarPor: string): Usuario[] {
-    const filtro = filtrarPor?.toLocaleLowerCase() || ''; // Garante que 'filtrarPor' é uma string válida
+    const filtro = filtrarPor?.toLocaleLowerCase() || ''; 
     return (this.usuarios || []).filter(usuario =>
       (usuario.nome || '').toLocaleLowerCase().includes(filtro) || 
       (usuario.sobrenome || '').toLocaleLowerCase().includes(filtro)

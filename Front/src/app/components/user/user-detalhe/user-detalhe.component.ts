@@ -11,8 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-detalhe',
-  templateUrl: './user-detalhe.component.html',  // Caminho do arquivo HTML
-  styleUrls: ['./user-detalhe.component.scss']  // Caminho do arquivo CSS
+  templateUrl: './user-detalhe.component.html',  
+  styleUrls: ['./user-detalhe.component.scss']  
 })
 export class UserDetalheComponent implements OnInit {
   
@@ -133,6 +133,6 @@ export class UserDetalheComponent implements OnInit {
     this.form.reset();
   }
   voltarParaListagem() {
-    this.router.navigate(['/user/listar']);  // Substitua '/listagem' pela rota da tela de listagem
+    this.router.navigate(['/user/listar']);  
   }
 }
