@@ -10,7 +10,7 @@ Antes de começar, verifique se você tem as seguintes ferramentas instaladas:
 - **SQL Server** (ou um banco de dados SQL Server configurado)
 - **Node.js** e **npm** para rodar o projeto Angular
 
-## Passos para configurar o banco de dados (SQL Server)
+## Passos para configurar o ambiente
 
 1. **Clonar o repositório:**
    Se você ainda não tem o projeto, clone o repositório utilizando o comando:
@@ -29,3 +29,9 @@ Antes de começar, verifique se você tem as seguintes ferramentas instaladas:
    ```bash
    npm install
 5.**Iniciar o servidor Angular**
+   O comando npm start é usado para rodar o projeto Angular em um servidor de desenvolvimento. O projeto ficará disponível no navegador em http://localhost:4200, onde você poderá acessar a interface do usuário
+
+```bash
+   git clone <URL do repositório>
+   
+
