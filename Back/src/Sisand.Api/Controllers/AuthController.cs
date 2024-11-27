@@ -122,7 +122,8 @@ namespace Sisand.Api.Controllers
                 UserName = registerDto.UserName,
                 Email = registerDto.Email,
                 EmailConfirmed = true,
-                Nome = registerDto.Nome
+                Nome = registerDto.Nome,
+                Sobrenome = registerDto.Sobrenome,
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);

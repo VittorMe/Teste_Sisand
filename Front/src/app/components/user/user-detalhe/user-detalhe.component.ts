@@ -103,7 +103,7 @@ export class UserDetalheComponent implements OnInit {
     })
   }
 
-  public salvarEvento(): void {
+  public salvarUsuario(): void {
     
     if (this.form.valid){
       this.spinner.show();
@@ -115,7 +115,7 @@ export class UserDetalheComponent implements OnInit {
 
           this.userService[verbHttp](this.usuario).subscribe(
             (reponse : Usuario)=>{
-              this.toastr.success('Evento salvo com Sucesso!', 'Sucesso');
+              this.toastr.success('Usuario salvo com Sucesso!', 'Sucesso');
               this.router.navigate([`user/detalhe/${reponse.id}`]);
             },
             (error: any) => {

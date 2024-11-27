@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { jwtDecode }from 'jwt-decode'; // Adicione essa biblioteca ao projeto: npm install jwt-decode
+import { Usuario } from '@app/Models/Usuarios';
 
 interface LoginResponse {
   token: string;
@@ -11,13 +12,13 @@ interface LoginResponse {
 @Injectable()
 export class AuthService {
   // private baseUrl = `http://localhost:5226/login`;
-  private baseUrl = `https://localhost:44384/login`;
+  private baseUrl = `https://localhost:44384`;
 
   constructor(private http: HttpClient) {}
 
   public login(email: string, password: string): Observable<LoginResponse> {
     return this.http
-      .post<LoginResponse>(this.baseUrl, { email, password })
+      .post<LoginResponse>(`${this.baseUrl}/login`, { email, password })
       .pipe(
         catchError((error) => {
           console.error('Login falhou', error);
@@ -25,6 +26,18 @@ export class AuthService {
         })
       );
   }
+
+  public register(userName:string, nome:string,sobrenome:string,email:string,password:string): Observable<Usuario> {
+    return this.http
+      .post<Usuario>(`${this.baseUrl}/register`, { userName,nome,sobrenome,email,password})
+      .pipe(
+        catchError((error) => {
+          console.error('Login falhou', error);
+          throw error;
+        })
+      );
+  }
+
 
   public saveToken(token: string): void {
     localStorage.setItem('jwt_token', token);

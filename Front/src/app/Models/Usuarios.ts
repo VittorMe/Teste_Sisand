@@ -12,5 +12,5 @@ export interface Usuario {
     dataCadastro?: Date;  
     dataNascimento?: Date;  
     dataAtualizacao?: Date | null;
-    userPermission: UserPermission[]
+    userPermission?: UserPermission[]
   }
