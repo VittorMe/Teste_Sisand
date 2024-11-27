@@ -1,0 +1,69 @@
+<h2>Usuarios</h2>
+<hr>
+
+<div class="card rouded shadow-sm p-3">
+  <div class="d-flex">
+      <div class="flex-fill pr-3">
+          <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                  <div class="input-group-text">Filtro: </div>
+              </div>
+              <input type="text" class="form-control " placeholder="Filtro - Tema/Local" [(ngModel)]="filtroList">
+          </div>
+      </div>
+      <div>
+          <a class="d-flex btn btn-outline-secondary" routerLink="/user/detalhe">
+              <i class="fa fa-plus-circle my-1"></i>
+              <b class="ml-1 d-none d-sm-block">Novo</b>
+
+          </a>
+      </div>
+
+  </div>
+
+<!-- Adicionando a classe 'table-responsive' -->
+<div class="table-responsive">
+  <table class="table table-striped" >
+    <thead class="thead-dark"class="text-center">
+      <tr>
+        <th>Nome</th>
+        <th class="d-none d-md-table-cell">Sobrenome</th> <!-- Oculta em telas menores que 'md' -->
+        <th>Email</th>
+        <th class="d-none d-lg-table-cell">Data Cadastro</th> <!-- Oculta em telas menores que 'lg' -->
+        <th class="d-none d-lg-table-cell">Data Atualizacao</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="eventosFiltrados && eventosFiltrados.length"  class="text-center"> 
+      <tr *ngFor="let usuario of eventosFiltrados" (click)="detalheEvento(usuario.id)" style="cursor: pointer;">
+        <td>{{usuario.nome}}</td>
+        <td class="d-none d-md-table-cell">{{usuario.sobrenome}}</td>
+        <td>{{usuario.email}}</td>
+        <td class="d-none d-lg-table-cell" >{{usuario.dataCadastro | DateFormatPipe}}</td>
+        <td class="d-none d-lg-table-cell">{{usuario.dataAtualizacao | DateFormatPipe}}</td>
+        <td>
+          <!-- <button type="button" class="btn btn-primary btn-sm" style="margin-right: 4px;" >Editar</button> -->
+          <button type="button" class="btn btn-danger " 
+                        (click)="openModal($event,templateDelete,usuario.id)">
+                        <i class="fa fa-trash "></i>
+                    </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="!eventosFiltrados.length">
+      <tr>
+        <td colspan="8" class="text-center">
+          <h4>Nenhum Usuario encontrado!</h4>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<ng-template #templateDelete>
+  <div class="modal-body text-center">
+      <p>Tem certeza que deseja deletar este Usuario ?</p>
+      <button type="button" class="btn btn-primary mr-2" (click)="confirm()" >Sim</button>
+      <button type="button" class="btn btn-danger" (click)="decline()">Não</button>
+  </div>
+</ng-template>
+

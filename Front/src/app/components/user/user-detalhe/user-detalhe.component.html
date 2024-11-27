@@ -1,0 +1,118 @@
+<div class="card rounded shadow-sm">
+    <form [formGroup]="form">
+        <div class="p-3">
+            <!-- Linha 1 -->
+            <div class="row">
+                <div class="col-6">
+                    <label for="tema">Nome</label>
+                    <input type="text" id="nome" 
+                    [ngClass]="{'is-invalid': f.nome!.errors && f.nome!.touched}"
+                    formControlName="nome" class="form-control" class="form-control is-invalid" placeholder="Insira o Nome">
+                    <div *ngIf="f.nome!.errors?.required" class="invalid-feedback">Nome é obrigatório!</div>
+                    <div *ngIf="f.nome!.errors?.minlength" class="invalid-feedback">Nome deve ter no minimo 4 caracteres!</div>
+                    <div *ngIf="f.nome!.errors?.maxlength" class="invalid-feedback">Nome deve ter no máximo 50 caracteres!</div>
+                </div>
+                <div class="col-6">
+                    <label for="tema">Sobrenome</label>
+                    <input type="text" id="sobrenome" 
+                    [ngClass]="{'is-invalid': f.sobrenome!.errors && f.sobrenome!.touched}"
+                    formControlName="sobrenome"class="form-control" class="form-control is-invalid" placeholder="Insira o SobreNome">
+                    <div *ngIf="f.sobrenome!.errors?.required" class="invalid-feedback">Nome é obrigatório!</div>
+                    <div *ngIf="f.sobrenome!.errors?.minlength" class="invalid-feedback">Nome deve ter no minimo 3 caracteres!</div>
+                    <div *ngIf="f.sobrenome!.errors?.maxlength" class="invalid-feedback">Nome deve ter no máximo 50 caracteres!</div>
+                </div>
+            </div>
+
+            <!-- Linha 2 -->
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label for="local">Endereço</label>
+                    <input type="text" id="endereco" 
+                    [ngClass]="{'is-invalid': f.endereco!.errors && f.endereco!.touched}"
+                    formControlName="endereco" class="form-control" placeholder="Insira o seu Endereço">
+                    <div *ngIf="f.endereco!.errors?.required && f.endereco.touched" class="invalid-feedback">Endereço é obrigatório!</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="local">Senha</label>
+                    <div class="position-relative">
+                        <input
+                          [type]="showPassword ? 'text' : 'password'"
+                          id="senha"
+                          [ngClass]="{'is-invalid': f.password!.errors && f.password!.touched}"
+                          formControlName="password"
+                          class="form-control pr-5"
+                          placeholder="Inserir senha caso deseja alterar">
+                        <i
+                          class="fa position-absolute text-muted"
+                          [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+                          (click)="togglePasswordVisibility()"
+                          style="top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;">
+                        </i>
+                      </div>
+                      
+                      
+                    <div *ngIf="f.password!.errors?.required && f.password.touched" class="invalid-feedback">Senha é obrigatório!</div>
+                    <div *ngIf="f.password!.errors?.minlength" class="invalid-feedback">Senha deve ter no minimo 8 caracteres!</div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <label for="dataHoraNascimento">Data Nascimento</label>
+                    <input type="datetime-local" id="dataHoraNascimento" 
+                    [ngClass]="{'is-invalid': f.dataNascimento!.errors && f.dataNascimento!.touched}"
+                    formControlName="dataNascimento"class="form-control">
+                </div>
+            </div>
+
+            <!-- Linha 3 -->
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <label for="nomeUsuario">Nome de Usuário</label>
+                    <input type="text" id="nomeUsuario" 
+                    [ngClass]="{'is-invalid': f.userName!.errors && f.userName!.touched}"
+                    formControlName="userName"class="form-control is-invalid" placeholder="">
+                    <div *ngIf="f.userName!.errors?.required" class="invalid-feedback">UserName é obrigatório!</div>
+                    <div *ngIf="f.userName!.errors?.minlength" class="invalid-feedback">UserName deve ter no minimo 4 caracteres!</div>
+                    <div *ngIf="f.userName!.errors?.maxlength" class="invalid-feedback">UserName deve ter no máximo 50 caracteres!</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" 
+                    [ngClass]="cssValidator(f.telefone)"
+                    formControlName="telefone" class="form-control" placeholder="(000) 90000-0000">
+                </div>
+                <div class="col-md-6">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" 
+                    [ngClass]="cssValidator(f.email)"
+                    class="form-control" formControlName="email" class="form-control is-invalid" placeholder="e-mail">
+
+                    <div *ngIf="f.email!.errors?.required && f.email.touched" class="invalid-feedback">E-mail é obrigatório!</div>
+                    <div *ngIf="f.email!.errors?.email && f.email.touched" class="invalid-feedback">E-mail deve ser válido!</div>
+                </div>
+            </div>
+        </div>
+<!-- Footer -->
+<!-- Footer -->
+<div class="card-footer">
+    <div class="d-flex justify-content-between w-100">
+        <!-- Botões Voltar e Cancelar Alteração (canto esquerdo) -->
+        <div>
+            <button class="btn btn-outline-primary mr-2" style="
+            margin-right: 2px;" (click)="voltarParaListagem()">
+                <i class="fa fa-arrow-left"></i> 
+            </button>
+            <button class="btn btn-outline-secondary" (click)="resetForm()">
+                Cancelar Alteração
+            </button>
+        </div>
+
+        <!-- Botão Salvar Evento (canto direito) -->
+        <button class="btn btn-success" [disabled]="!form.valid" (click)="salvarEvento()">
+            Salvar Evento
+        </button>
+    </div>
+</div>
+
+
+        
+    </form>
